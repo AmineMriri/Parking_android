@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Parking_spot</string>
+    <string name="login">Login</string>
+    <string name="e_mail">E-mail</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+    <string name="resetpass">Forgot password?</string>
+    <string name="name">name</string>
+    <string name="matricule">Matricule</string>
+    <string name="phone">Phone</string>
+    <!--    <string name="go_login">Back to log in</string>-->
+    @
 </resources>
