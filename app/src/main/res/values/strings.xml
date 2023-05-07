@@ -12,7 +12,6 @@
     <string name="date">Select a date :</string>
     <string name="start">Start Time</string>
     <string name="hours">Select Hours</string>
-    <!--    -->
 
 
     <string name="login_email_hint">Email</string>

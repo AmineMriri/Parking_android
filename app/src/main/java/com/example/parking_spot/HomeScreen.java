@@ -39,6 +39,7 @@ public class HomeScreen extends AppCompatActivity {
         Button logout = findViewById(R.id.logoutbtn);
 
       List<item> items = new ArrayList<>();
+      List<item> items1= new ArrayList<>();
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("spot");
 
@@ -54,17 +55,27 @@ public class HomeScreen extends AppCompatActivity {
                 Toast.makeText(HomeScreen.this,"on data change",Toast.LENGTH_SHORT).show();
                 Log.d("TAG", "onDataChange() triggered");
                 items.clear();
+                items1.clear();
                 // This method will be called whenever data is changed in the Realtime Database
                 for (DataSnapshot spotsnapshot : dataSnapshot.getChildren()){
+
+
                     //get the name and availability
                     String name = spotsnapshot.child("name").getValue(String.class);
                     boolean availability = spotsnapshot.child("availability").getValue(boolean.class);
-                    //treat data
                     item newspot = new item(name,availability);
-                    items.add(newspot);
+                    // check whether to put it inthe first field or the second
+                    if (name != null && name.matches("[1-7]")) {
+                        // put in the first field
 
 
+                        items.add(newspot);
 
+                    } else {
+                        // put in the second field
+                        items1.add(newspot);
+
+                    }
 
                     Log.d("TAG","Spot" + name + "is" + (availability? "available" : "not available"));
                 }
@@ -79,7 +90,7 @@ public class HomeScreen extends AppCompatActivity {
 
 
                 recyclerView2.setLayoutManager(new LinearLayoutManager(HomeScreen.this));
-                recyclerView2.setAdapter(new MyAdapter(getApplicationContext(),items));
+                recyclerView2.setAdapter(new MyAdapter(getApplicationContext(),items1));
 
 
             }
@@ -105,25 +116,3 @@ public class HomeScreen extends AppCompatActivity {
     }
 
 }
-
-//        items.add(new item("spot1"));
-//        items.add(new item("spot2"));
-//        items.add(new item("spot3"));
-//        items.add(new item("spot4"));
-//        items.add(new item("spot5"));
-//        items.add(new item("spot6"));
-//        items.add(new item("spot7"));
-//        items.add(new item("spot2"));
-//        items.add(new item("spot3"));
-//        items.add(new item("spot4"));
-//        items.add(new item("spot5"));
-//        items.add(new item("spot6"));
-//        items.add(new item("spot7"));
-//        items.add(new item("spot2"));
-//        items.add(new item("spot3"));
-//        items.add(new item("spot4"));
-//        items.add(new item("spot5"));
-//        items.add(new item("spot6"));
-//        items.add(new item("spot7"));
-//
-//

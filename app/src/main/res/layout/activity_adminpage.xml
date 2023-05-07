@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -33,13 +34,13 @@
             </LinearLayout>
 
             <LinearLayout
+                android:layout_centerHorizontal="true"
                 android:layout_width="wrap_content"
-                android:layout_height="561dp"
+                android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_marginLeft="30dp"
                 android:layout_marginTop="46dp"
-                android:layout_marginRight="30dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:gravity="center">
 
                 <TextView
                     style="@style/headerText"
@@ -47,34 +48,56 @@
                     android:layout_marginTop="40dp"
                     android:text="@string/app_name"
                     android:textSize="36sp" />
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
 
-                <TextView
-                    android:id="@+id/Titleadmin"
-                    android:layout_width="wrap_content"
+    >
+    <TextView
+        android:id="@+id/Titleadmin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="ADMIN Dashboard"
+        android:textColor="#FF1100"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        />
+</LinearLayout>
 
-                    android:layout_height="50dp"
-                    android:layout_marginHorizontal="45sp"
-                    android:layout_marginTop="50dp"
-                    android:text="Admni Dashboard"
-                    android:textColor="#FF1100"
-                    android:textSize="30sp" />
 
 
+<ScrollView
+    android:layout_width="wrap_content"
+    android:layout_height="450dp">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/userlist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
 
-               <androidx.recyclerview.widget.RecyclerView
-                   android:id="@+id/userlist"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
+        />
 
-                   />
-                <Button
+</ScrollView>
+
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/logoutadmin"
-                    />
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="115dp"
+                    android:layout_marginTop="10dp"
+                    >
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/logoutadmin"
+                        android:text="logout"
 
-
+                        android:background="@drawable/button_background"
+                        />
+                </LinearLayout>
             </LinearLayout>
+
 
             <ImageView
                 android:layout_width="match_parent"

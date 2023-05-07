@@ -9,6 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.protobuf.Value;
+
 import java.util.ArrayList;
 
 public class AdapterUser extends RecyclerView.Adapter<AdapterUser.MyViewHolderUser> {
@@ -39,7 +41,7 @@ public class AdapterUser extends RecyclerView.Adapter<AdapterUser.MyViewHolderUs
         UserModel userModel = list.get(position);
         holder.name.setText(userModel.getName());
         holder.email.setText(userModel.getEmail());
-        holder.phone.setText(userModel.getPhone());
+        holder.phone.setText(String.valueOf(userModel.getPhone()));
         holder.matricule.setText(userModel.getMatricule());
 
     }
