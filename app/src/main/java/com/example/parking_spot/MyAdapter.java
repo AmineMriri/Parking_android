@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
+import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,6 +15,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyviewHolder> {
 
     Context context;
     List<item> items;
+
 
     public MyAdapter(Context context, List<item> items) {
         this.context = context;
@@ -28,7 +30,21 @@ public class MyAdapter extends RecyclerView.Adapter<MyviewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyviewHolder holder, int position) {
-            holder.button.setText(items.get(position).getName());
+
+        item currentItem = items.get(position);
+
+        holder.button.setText("spot "+items.get(position).getName());
+
+        if (currentItem.availability) {
+            holder.button.setClickable(true);
+
+        } else {
+            holder.button.setBackgroundColor(context.getResources().getColor(android.R.color.holo_red_light));
+
+            holder.button.setClickable(false);
+        }
+
+
     }
 
     @Override

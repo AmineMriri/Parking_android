@@ -14,7 +14,12 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Register extends AppCompatActivity {
 
@@ -42,9 +47,9 @@ public class Register extends AppCompatActivity {
         binding.signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String name=binding.idName.getText().toString();
-                String email=binding.IdEmailRegister.getText().toString();
-                String matricule=binding.IdMatricule.getText().toString();
+                String name=binding.idName.getText().toString().trim();
+                String email=binding.IdEmailRegister.getText().toString().trim();
+                String matricule=binding.IdMatricule.getText().toString().trim();
                 int phone=Integer.parseInt(binding.idPhone.getText().toString());
                 String password=binding.IdPassRegister.getText().toString();
 
@@ -54,12 +59,22 @@ public class Register extends AppCompatActivity {
                         .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                             @Override
                             public void onSuccess(AuthResult authResult) {
+                                FirebaseUser user = firebaseAuth.getCurrentUser();
+                                DocumentReference df = firebaseFirestore.collection("user")
+                                        .document(user.getUid());
+                                Map<String,Object> userInfo = new HashMap<>();
+                                userInfo.put("name",name);
+                                userInfo.put("email",email);
+                                userInfo.put("matricule",matricule);
+                                userInfo.put("phone",phone);
+
+                                userInfo.put("isuser","1");
+
+                                df.set(userInfo);
                                 startActivity(new Intent(Register.this,Login.class));
                                 progressDialog.cancel();
+                                finish();
 
-                                firebaseFirestore.collection("User")
-                                        .document(FirebaseAuth.getInstance().getUid())
-                                        .set(new UserModel(name,email,matricule,phone));
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {

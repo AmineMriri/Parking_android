@@ -1,15 +1,74 @@
 {
   "project_info": {
     "project_number": "964461974036",
+    "firebase_url": "https://park-5057e-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "park-5057e",
     "storage_bucket": "park-5057e.appspot.com"
   },
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:964461974036:android:3bbfc51fb887d944078d01",
+        "android_client_info": {
+          "package_name": "com.example.auto_park"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "964461974036-17l9og6qji836518jq7qaq7keadnver6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbzWC8deCUKdOLz2RimKYOrVa_xImFpIk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "964461974036-17l9og6qji836518jq7qaq7keadnver6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:964461974036:android:72b2dff4b1c92341078d01",
         "android_client_info": {
           "package_name": "com.example.parking_spot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "964461974036-17l9og6qji836518jq7qaq7keadnver6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbzWC8deCUKdOLz2RimKYOrVa_xImFpIk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "964461974036-17l9og6qji836518jq7qaq7keadnver6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:964461974036:android:3f9d9377e4bcd8ef078d01",
+        "android_client_info": {
+          "package_name": "com.example.test2"
         }
       },
       "oauth_client": [

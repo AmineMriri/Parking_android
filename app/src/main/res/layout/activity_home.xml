@@ -32,6 +32,7 @@
                         android:background="@drawable/ic_login_bk"
                         android:contentDescription="login background" />
 
+
                 </LinearLayout>
 
             </LinearLayout>
@@ -40,7 +41,7 @@
             <!--            Main content -->
             <LinearLayout
                 android:layout_width="308dp"
-                android:layout_height="572dp"
+                android:layout_height="600dp"
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="35dp"
@@ -70,6 +71,7 @@
 
                 <LinearLayout
                     android:layout_width="wrap_content"
+                    android:layout_marginTop="75dp"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
@@ -97,27 +99,36 @@
                     </androidx.recyclerview.widget.RecyclerView>
 
 
+
+
                 </LinearLayout>
 
 
 
 
             </LinearLayout>
+            <Button
+            android:id="@+id/logoutbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="logout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="670dp"
+            android:background="@drawable/button_background"
+
+
+
+                />
 
             <ImageView
                 android:layout_width="525dp"
                 android:layout_height="450dp"
                 android:layout_alignParentTop="true"
 
-                android:layout_centerHorizontal="true"
                 android:layout_centerInParent="true"
-
                 android:layout_marginTop="220dp"
                 android:alpha="0.7"
                 android:src="@drawable/background_park" />
-
-
-
 
 
         </RelativeLayout>

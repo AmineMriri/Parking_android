@@ -3,9 +3,11 @@ package com.example.parking_spot;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -14,6 +16,9 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Login extends AppCompatActivity {
 
@@ -21,7 +26,7 @@ public class Login extends AppCompatActivity {
     ActivityLoginBinding binding;
 
     FirebaseAuth firebaseAuth;
-
+    FirebaseFirestore firebaseFirestore;
     ProgressDialog progressDialog;
 
     @Override
@@ -32,6 +37,7 @@ public class Login extends AppCompatActivity {
 
         firebaseAuth=FirebaseAuth.getInstance();
         progressDialog=new ProgressDialog(this);
+        firebaseFirestore = FirebaseFirestore.getInstance();
 
 
         binding.BtnLogin.setOnClickListener(new View.OnClickListener() {
@@ -46,7 +52,8 @@ public class Login extends AppCompatActivity {
                             public void onSuccess(AuthResult authResult) {
                                 progressDialog.cancel();
                                 Toast.makeText(Login.this,"GOOD login",Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(Login.this,HomeScreen.class));
+
+                                checkuseraccess(authResult.getUser().getUid());
 
 
                             }
@@ -89,6 +96,29 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Login.this,Register.class));
+            }
+        });
+    }
+
+    private void checkuseraccess(String uid) {
+        DocumentReference df = firebaseFirestore.collection("user").document(uid);
+        df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+                Log.d("TAG", "onSuccess: "+documentSnapshot.getData());
+
+                if (documentSnapshot.getString("isuser") != null){
+                    //admin
+
+                    startActivity(new Intent(Login.this,HomeScreen.class));
+
+                }else {
+
+                    startActivity(new Intent(Login.this,admin.class));
+
+                }
+
             }
         });
     }
