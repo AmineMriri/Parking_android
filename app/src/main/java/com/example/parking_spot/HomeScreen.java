@@ -44,7 +44,6 @@ public class HomeScreen extends AppCompatActivity {
         DatabaseReference myRef = database.getReference("spot");
 
 
-        Toast.makeText(HomeScreen.this,"to the event listener",Toast.LENGTH_SHORT).show();
 
         myRef.addValueEventListener(new ValueEventListener() {
 
@@ -52,7 +51,7 @@ public class HomeScreen extends AppCompatActivity {
 
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Toast.makeText(HomeScreen.this,"on data change",Toast.LENGTH_SHORT).show();
+                Toast.makeText(HomeScreen.this,"updating data",Toast.LENGTH_SHORT).show();
                 Log.d("TAG", "onDataChange() triggered");
                 items.clear();
                 items1.clear();
@@ -85,7 +84,6 @@ public class HomeScreen extends AppCompatActivity {
 
                 recyclerView1.setLayoutManager(new LinearLayoutManager(HomeScreen.this));
                 recyclerView1.setAdapter(adaptater1);
-                Toast.makeText(HomeScreen.this,"adaptater set",Toast.LENGTH_SHORT).show();
                 adaptater1.notifyDataSetChanged();
 
 

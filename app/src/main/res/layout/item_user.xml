@@ -44,6 +44,7 @@
                 android:layout_height="wrap_content"
                 android:text="Delete"
                 android:backgroundTint="#F44336"
+                android:id="@+id/deletebtn"
                 />
         </LinearLayout>
         <LinearLayout

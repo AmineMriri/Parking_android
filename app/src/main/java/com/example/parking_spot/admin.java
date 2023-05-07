@@ -38,22 +38,6 @@ public class admin extends AppCompatActivity {
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         ArrayList<UserModel> list = new ArrayList<>();
-//        ArrayList<UserModel> testlist = new ArrayList<>();
-//
-//        // create 10 new static users and add them to the list
-//        for (int i = 1; i <= 10; i++) {
-//            String name = "User " + i;
-//            String email = "user" + i + "@example.com";
-//            String matricule = "MAT" + i;
-//            int phone = 1234567890 + i;
-//
-//            UserModel newUser = new UserModel(name, email, matricule, phone);
-//            testlist.add(newUser);
-//        }
-//
-//        recyclerView.setLayoutManager(new LinearLayoutManager(admin.this));
-//        AdapterUser adapterUser = new AdapterUser(getApplicationContext(),testlist);
-//        recyclerView.setAdapter(adapterUser);
 
         Log.d("ADMINPAGE", "fetching data ...");
         CollectionReference userRef = db.collection("user");

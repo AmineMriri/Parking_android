@@ -69,27 +69,38 @@ public class Login extends AppCompatActivity {
             }
         });
         binding.IdLinkResetpass.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
-                String email=binding.IdEmail.getText().toString().trim();
-                progressDialog.setTitle("Sending Reset Mail");
-                progressDialog.show();
-                firebaseAuth.sendPasswordResetEmail(email)
-                        .addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void unused) {
-                                progressDialog.cancel();
-                                Toast.makeText(Login.this,"reset mail sent to "+ email,Toast.LENGTH_SHORT).show();
 
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                progressDialog.cancel();
-                                Toast.makeText(Login.this,"failed due to : "+ e.getMessage(),Toast.LENGTH_SHORT).show();
-                            }
-                        });
+                if (binding.IdEmail.getText().toString().trim()==null){
+                    Toast.makeText(Login.this,"resetting in progress",Toast.LENGTH_SHORT).show();
+                    String email=binding.IdEmail.getText().toString().trim();
+                    progressDialog.setTitle("Sending Reset Mail");
+                    progressDialog.show();
+                    firebaseAuth.sendPasswordResetEmail(email)
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void unused) {
+                                    progressDialog.cancel();
+                                    Toast.makeText(Login.this,"reset mail sent to "+ email,Toast.LENGTH_SHORT).show();
+
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    progressDialog.cancel();
+                                    Toast.makeText(Login.this,"failed due to : "+ e.getMessage(),Toast.LENGTH_SHORT).show();
+                                }
+                            });
+
+
+                } else {
+                    Toast.makeText(Login.this,"please put the email adress",Toast.LENGTH_SHORT).show();
+
+                }
+
             }
         });
         binding.IdLinkRegister.setOnClickListener(new View.OnClickListener() {
@@ -109,14 +120,14 @@ public class Login extends AppCompatActivity {
                 Log.d("TAG", "onSuccess: "+documentSnapshot.getData());
 
                 if (documentSnapshot.getString("isuser") != null){
-                    //admin
+                    //normal user
 
                     startActivity(new Intent(Login.this,HomeScreen.class));
-
+                    finish();
                 }else {
-
+//                     admin
                     startActivity(new Intent(Login.this,admin.class));
-
+                    finish();
                 }
 
             }

@@ -1,9 +1,11 @@
 package com.example.parking_spot;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -44,6 +46,8 @@ public class AdapterUser extends RecyclerView.Adapter<AdapterUser.MyViewHolderUs
         holder.phone.setText(String.valueOf(userModel.getPhone()));
         holder.matricule.setText(userModel.getMatricule());
 
+
+
     }
 
     @Override
@@ -61,6 +65,17 @@ public class AdapterUser extends RecyclerView.Adapter<AdapterUser.MyViewHolderUs
                 email = itemView.findViewById(R.id.iduseremail);
                 phone = itemView.findViewById(R.id.iduserphone);
                 matricule = itemView.findViewById(R.id.idusermatricule);
+                Button delete = itemView.findViewById(R.id.deletebtn);
+
+
+
+                delete.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Log.d("DELETE", "onClick: DELETE");
+
+                    }
+                });
             }
         }
 
