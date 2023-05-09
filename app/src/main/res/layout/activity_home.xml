@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     style="@style/loginParent"
-    tools:context=".home"
-
-    >
+    tools:context=".home">
 
 
     <LinearLayout
@@ -41,7 +39,7 @@
             <!--            Main content -->
             <LinearLayout
                 android:layout_width="308dp"
-                android:layout_height="600dp"
+                android:layout_height="650dp"
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="35dp"
@@ -71,13 +69,13 @@
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_marginTop="25dp"
-                    android:layout_height="wrap_content"
+                    android:layout_marginTop="65dp"
+                    android:layout_height="450dp"
                     android:orientation="horizontal">
 
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:layout_width="match_parent"
+                        android:layout_width="120dp"
                         android:layout_height="wrap_content"
 
                         android:id="@+id/recycleview1"
@@ -89,9 +87,9 @@
 
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:layout_width="match_parent"
+                        android:layout_width="120dp"
                         android:layout_height="wrap_content"
-
+                        android:layout_marginLeft="65dp"
                         android:id="@+id/recycleview2"
                         >
 
@@ -107,13 +105,19 @@
 
 
             </LinearLayout>
+
+
+
             <Button
             android:id="@+id/logoutbtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:textSize="22dp"
+
+                android:textColor="@color/loginBkColor"
             android:text="logout"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="670dp"
             android:background="@drawable/button_background"
 
 
@@ -122,13 +126,21 @@
 
             <ImageView
                 android:layout_width="525dp"
-                android:layout_height="450dp"
+                android:layout_height="550dp"
                 android:layout_alignParentTop="true"
 
                 android:layout_centerInParent="true"
                 android:layout_marginTop="220dp"
                 android:alpha="0.7"
                 android:src="@drawable/background_park" />
+            <ImageView
+
+                android:layout_width="225dp"
+                android:layout_height="225dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="600dp"
+                android:alpha="0.7"
+                android:src="@drawable/parking" />
 
 
         </RelativeLayout>

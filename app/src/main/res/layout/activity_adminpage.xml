@@ -87,6 +87,9 @@
                     android:layout_marginLeft="115dp"
                     android:layout_marginTop="10dp"
                     >
+
+
+
                     <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -96,6 +99,7 @@
                         android:background="@drawable/button_background"
                         />
                 </LinearLayout>
+
             </LinearLayout>
 
 
@@ -111,6 +115,14 @@
                 android:layout_marginTop="166dp"
                 android:alpha="0.2"
                 android:src="@drawable/parking" />
+            <ImageView
+
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:src="@drawable/parking"
+                android:layout_marginTop="635dp"
+                android:layout_marginLeft="12dp"
+                />
 
 
         </RelativeLayout>

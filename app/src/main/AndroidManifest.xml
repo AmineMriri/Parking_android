@@ -15,6 +15,13 @@
         android:theme="@style/Theme.Parking_spot"
         tools:targetApi="31">
         <activity
+            android:name=".resetLActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".admin"
             android:exported="false">
             <meta-data
@@ -30,7 +37,8 @@
         </activity>
         <activity
             android:name=".HomeScreen"
-            android:exported="false">
+            android:exported="false"
+            android:theme="@style/remove_actionbar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

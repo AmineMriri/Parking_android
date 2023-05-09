@@ -35,6 +35,10 @@ public class Login extends AppCompatActivity {
         binding=ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+
+//        getActionBar().hide();
+
+
         firebaseAuth=FirebaseAuth.getInstance();
         progressDialog=new ProgressDialog(this);
         firebaseFirestore = FirebaseFirestore.getInstance();
@@ -72,34 +76,8 @@ public class Login extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-
-                if (binding.IdEmail.getText().toString().trim()==null){
-                    Toast.makeText(Login.this,"resetting in progress",Toast.LENGTH_SHORT).show();
-                    String email=binding.IdEmail.getText().toString().trim();
-                    progressDialog.setTitle("Sending Reset Mail");
-                    progressDialog.show();
-                    firebaseAuth.sendPasswordResetEmail(email)
-                            .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void unused) {
-                                    progressDialog.cancel();
-                                    Toast.makeText(Login.this,"reset mail sent to "+ email,Toast.LENGTH_SHORT).show();
-
-                                }
-                            })
-                            .addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    progressDialog.cancel();
-                                    Toast.makeText(Login.this,"failed due to : "+ e.getMessage(),Toast.LENGTH_SHORT).show();
-                                }
-                            });
-
-
-                } else {
-                    Toast.makeText(Login.this,"please put the email adress",Toast.LENGTH_SHORT).show();
-
-                }
+                startActivity(new Intent(Login.this,resetLActivity.class));
+                finish();
 
             }
         });

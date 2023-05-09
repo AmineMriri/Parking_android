@@ -31,7 +31,6 @@ public class HomeScreen extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
 
-
         RecyclerView recyclerView1 = findViewById(R.id.recycleview1);
 
         RecyclerView recyclerView2 = findViewById(R.id.recycleview2);

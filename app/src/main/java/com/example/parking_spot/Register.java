@@ -38,6 +38,9 @@ public class Register extends AppCompatActivity {
         binding=ActivityRegisterBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+
+
+
         firebaseAuth=FirebaseAuth.getInstance();
 
         firebaseFirestore=FirebaseFirestore.getInstance();

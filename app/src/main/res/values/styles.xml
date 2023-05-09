@@ -8,17 +8,23 @@
     <style name="remove_actionbar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
     </style>
     <!--designs for login and register-->
 <style name="parent">
 <item name="android:layout_width">match_parent</item>
 <item name="android:layout_height">wrap_content</item>
+    <item name="windowActionBar">false</item>
+    <item name="windowNoTitle">true</item>
+    <item name="android:windowFullscreen">true</item>
 </style>
 
 <style name="loginParent" parent="parent">
 <item name="android:layout_height">match_parent</item>
 <item name="android:background">@color/loginBkColor</item>
 <item name="android:focusableInTouchMode">true</item>
+    <item name="windowActionBar">false</item>
+    <item name="windowNoTitle">true</item>
 </style>
 
 <style name="headerText" parent="parent">

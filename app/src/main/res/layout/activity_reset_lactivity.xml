@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".resetLActivity">
+
+
+    <ScrollView
+        style="@style/parent">
+        <RelativeLayout
+            style="@style/parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:weightSum="12">
+
+                <LinearLayout
+                    style="@style/parent"
+                    android:background="@drawable/login_shape_bk"
+                    android:orientation="vertical"
+                    android:layout_weight="3">
+
+                    <ImageView
+                        style="@style/parent"
+                        android:background="@drawable/ic_login_bk"
+                        android:contentDescription="login background" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="561dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="46dp"
+                android:layout_marginRight="30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/headerText"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="40dp"
+                    android:text="@string/app_name"
+                    android:textSize="36sp" />
+
+                <TextView
+                    android:id="@+id/idTitle"
+                    android:layout_width="263dp"
+
+                    android:layout_height="57dp"
+                    android:layout_marginLeft="85dp"
+                    android:layout_marginTop="50dp"
+                    android:text="Reset password"
+                    android:textColor="@color/sortofblue"
+                    android:textSize="30sp" />
+
+                <EditText
+                    android:id="@+id/IdEmail"
+                    android:layout_width="354dp"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="75dp"
+                    android:layout_marginBottom="10dp"
+                    android:autofillHints=""
+                    android:ems="10"
+                    android:hint="@string/e_mail"
+                    android:minHeight="48dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/material_dynamic_neutral30"
+
+                    />
+
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="15dp"
+    >
+
+    <Button
+        android:id="@+id/resetbtn"
+        android:layout_marginTop="150dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="120dp"
+        android:background="@drawable/button_background"
+
+        android:text="Reset"
+
+        />
+</LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="340dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    >
+
+
+                    <TextView
+                        android:id="@+id/IdLinkRegister"
+                        android:layout_width="55dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/register"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/Idlogin"
+                        android:layout_width="130dp"
+                        android:layout_height="25dp"
+                        android:layout_marginLeft="150dp"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/login"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="434dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+
+
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="166dp"
+                android:alpha="0.2"
+                android:src="@drawable/parking" />
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+
+
+
+</RelativeLayout>

@@ -28,10 +28,15 @@ import java.util.ArrayList;
 
 public class admin extends AppCompatActivity {
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adminpage);
+
+
 
         RecyclerView recyclerView;
         recyclerView = findViewById(R.id.userlist);
@@ -54,15 +59,18 @@ public class admin extends AppCompatActivity {
                     int phone = documentSnapshot.getLong("phone").intValue();
                     String email = documentSnapshot.getString("email");
                     String matricule = documentSnapshot.getString("matricule");
+                    String id = documentSnapshot.getId();
 
                     Log.d("ADMINPAGE", "Name: " + name);
                     Log.d("ADMINPAGE", "Phone: " + phone);
                     Log.d("ADMINPAGE", "Email: " + email);
                     Log.d("ADMINPAGE", "Matricule: " + matricule);
 
+                    Log.d("ADMINPAGE", "Id: " + id);
+
 
                     //treat the data
-                    UserModel newuser = new UserModel(name,email,matricule,phone);
+                    UserModel newuser = new UserModel(name,email,matricule,id,phone);
                     list.add(newuser);
 
                 }
@@ -88,6 +96,11 @@ public class admin extends AppCompatActivity {
                 finish();
             }
         });
+
+
+
+
+
 
 
     }
